@@ -9,20 +9,20 @@ func main() {
 }
 
 func FizzBuzz(n int) []string {
-	answers := make([]string, n+1)
-	for i := 1; i < n+1; i++ {
+	var res []string
+	for i := 1; i <= n; i++ {
 		if i%15 == 0 {
-			answers[i-1] = "FizzBuzz"
+			res = append(res, "FizzBuzz")
 		} else if i%3 == 0 {
-			answers[i-1] = "Fizz"
+			res = append(res, "Fizz")
 		} else if i%5 == 0 {
-			answers[i-1] = "Buzz"
+			res = append(res, "Buzz")
 		} else {
-			answers[i-1] = strconv.Itoa(i)
+			res = append(res, strconv.Itoa(i))
 		}
 	}
+	return res
 
-	return answers
 }
 
 func ContainsDuplicate(nums []int) bool {
@@ -50,4 +50,13 @@ func MovingZeroes(nums []int) []int {
 	nums = append(nums, make([]int, zeroesCount)...)
 
 	return nums
+}
+
+func ReverseString(s []byte) []byte {
+	reversed := make([]byte, len(s))
+	for i := 0; i < len(s); i++ {
+		reversed[i] = s[len(s)-1-i]
+	}
+
+	return reversed
 }
