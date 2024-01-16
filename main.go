@@ -53,10 +53,9 @@ func MovingZeroes(nums []int) []int {
 }
 
 func ReverseString(s []byte) []byte {
-	reversed := make([]byte, len(s))
-	for i := 0; i < len(s); i++ {
-		reversed[i] = s[len(s)-1-i]
+	for i := 0; i < len(s)/2; i++ {
+		s[i], s[len(s)-1-i] = s[len(s)-1-i], s[i]
 	}
 
-	return reversed
+	return s
 }
